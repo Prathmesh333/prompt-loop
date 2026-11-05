@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+
+# Local exercise location and regenerated check output.
+/validation/exercise-location.txt
+/validation/local-reports/

@@ -1,0 +1,91 @@
+{
+  "candidate": "C:\\Users\\chu\\AppData\\Local\\Temp\\iterative-task-completion-99b3c45efe2a49cf97f5578129685f3f\\dedupe.py",
+  "sha256": "711a8fea35dd9cee87f3cd55556b912f70cb121712f6c39674e8363f4daa251b",
+  "passed": 8,
+  "total": 8,
+  "checks": [
+    {
+      "check": "empty",
+      "pass": true,
+      "output": []
+    },
+    {
+      "check": "order",
+      "pass": true,
+      "output": [
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "check": "strings",
+      "pass": true,
+      "output": [
+        "z",
+        "a"
+      ]
+    },
+    {
+      "check": "lists",
+      "pass": true,
+      "output": [
+        [
+          2
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "check": "dicts",
+      "pass": true,
+      "output": [
+        {
+          "a": 1
+        },
+        {
+          "b": 2
+        }
+      ]
+    },
+    {
+      "check": "mixed",
+      "pass": true,
+      "output": [
+        1,
+        "x",
+        [
+          1
+        ],
+        {
+          "k": 2
+        }
+      ]
+    },
+    {
+      "check": "first_identity",
+      "pass": true,
+      "output": [
+        {
+          "key": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "check": "input_unchanged",
+      "pass": true,
+      "output": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    }
+  ]
+}

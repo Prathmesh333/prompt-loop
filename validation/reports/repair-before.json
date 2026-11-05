@@ -1,0 +1,55 @@
+{
+  "candidate": "D:\\!_Projects\\SelfPromptImprovingAgent\\validation\\fixtures\\dedupe_seed.py",
+  "sha256": "6554f80b00dabd30b952ac789a15f6838b09ffa6399ec03e6edbfe103134713b",
+  "passed": 2,
+  "total": 8,
+  "checks": [
+    {
+      "check": "empty",
+      "pass": true,
+      "output": []
+    },
+    {
+      "check": "order",
+      "pass": false,
+      "output": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "check": "strings",
+      "pass": true,
+      "output": [
+        "z",
+        "a"
+      ]
+    },
+    {
+      "check": "lists",
+      "pass": false,
+      "error": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "check": "dicts",
+      "pass": false,
+      "error": "TypeError: unhashable type: 'dict'"
+    },
+    {
+      "check": "mixed",
+      "pass": false,
+      "error": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "check": "first_identity",
+      "pass": false,
+      "error": "TypeError: unhashable type: 'dict'"
+    },
+    {
+      "check": "input_unchanged",
+      "pass": false,
+      "error": "TypeError: unhashable type: 'list'"
+    }
+  ]
+}

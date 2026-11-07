@@ -73,6 +73,35 @@ For incomplete work, report the condition that prevents the next action and list
 
 Return the outcome, the result or best available candidate, the evidence, the counts, material prompt changes, and unresolved criteria. If no usable candidate exists, state that clearly.
 
+## Worked example
+
+Suppose the user requests a Python function that removes duplicate values, preserves first-occurrence order, and supports lists and dictionaries. The function must leave the input unchanged.
+
+Record three required criteria. Check order with `[3, 1, 3, 2]`, which must produce `[3, 1, 2]`. Check support for unhashable values with repeated lists and dictionaries. Check input preservation by comparing the input with a copy after each call.
+
+Record the first execution prompt.
+
+```text
+Implement dedupe(values) in Python. Return the first occurrence of each
+distinct value in input order. Support lists and dictionaries. Leave the
+input unchanged. Check order, unhashable values, and input preservation.
+```
+
+The first candidate builds an ordered result and uses a set to track values. The integer-order check passes. The list and dictionary checks raise `TypeError`. Those failures leave support for unhashable values unresolved. The failed calls also leave input preservation for those cases unverified.
+
+Record a revised prompt that addresses the observed failure.
+
+```text
+Revise dedupe(values). The set membership check raises TypeError for lists
+and dictionaries. Compare each value for equality with the retained values.
+Keep the first occurrence in input order and leave the input unchanged.
+Rerun the order, unhashable-value, and input-preservation checks.
+```
+
+The second candidate passes all three required criteria. Report `completed`, cite the passing checks, and record two execution attempts and two verification rounds.
+
+If the second candidate is available but a required check could not run, keep the criterion `unverified`. Use an available check on that candidate within the limits. If no useful check is available, report the dependency and retain the candidate.
+
 ## Keep a compact record
 
 Keep the record in the host conversation by default. Record observable instructions and findings. Exclude credentials and unnecessary sensitive data. Give concise updates when findings or direction change. Use the following fields as needed.

@@ -1,19 +1,36 @@
 # Prompt Loop
 
-Prompt Loop is a Codex skill that revises an execution prompt based on the results of each attempt. The agent defines completion criteria, executes the prompt, and checks the result against those criteria. It stops when the required criteria pass or a limit or dependency prevents further work.
+Prompt Loop is a skill for AI agents and large language models. The agent defines completion criteria, executes a prompt, and checks the result. It revises the prompt based on the evidence and stops when the required criteria pass or a limit or dependency prevents further work.
 
 The complete skill is in [SKILL.md](SKILL.md).
 
 ## Install
 
+### Codex
+
 Copy `SKILL.md` into a `prompt-loop` folder in your Codex skills directory. The default destination is `~/.codex/skills/prompt-loop/SKILL.md`. If you set `CODEX_HOME`, use its `skills` directory.
+
+### Claude Code
+
+Copy `SKILL.md` to the path for your preferred scope.
+
+| Scope | Destination |
+|---|---|
+| Personal, across local projects | `~/.claude/skills/prompt-loop/SKILL.md` |
+| One project | `.claude/skills/prompt-loop/SKILL.md` relative to the project root |
+
+Run `/prompt-loop` with your task in Claude Code. [Claude Code skill documentation](https://code.claude.com/docs/en/skills)
+
+### Other agents and models
+
+Load `SKILL.md` through your agent's skill loader. If your interface accepts instructions directly, provide the file contents with your task.
 
 ## Use
 
-Invoke `$prompt-loop` with a task and any constraints or checks that define success.
+Give Prompt Loop a task and any constraints or checks that define success. Use `$prompt-loop` to invoke it in Codex.
 
 ```text
-Use $prompt-loop to fix the failing parser test. Preserve the public API.
+Use Prompt Loop to fix the failing parser test. Preserve the public API.
 Run the parser tests to verify the fix.
 ```
 

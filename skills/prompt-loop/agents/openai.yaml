@@ -1,4 +1,0 @@
-interface:
-  display_name: "Prompt Loop"
-  short_description: "Refine prompts and evaluate results until task completion"
-  default_prompt: "Use $prompt-loop to complete this task through prompt refinement and evidence-based evaluation."
